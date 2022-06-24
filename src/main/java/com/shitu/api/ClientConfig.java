@@ -9,7 +9,8 @@ import com.shitu.api.utils.StringUtil;
  */
 public class ClientConfig {
 
-    public static final String DEFAULT_DOMAIN = "https://fec.51wanquan.com/api/fec";
+//    public static final String DEFAULT_DOMAIN = "https://fec.51wanquan.com/api/fec";
+    public static final String DEFAULT_DOMAIN = "http://localhost:8093/api/fec";
 
     public ClientConfig(String merchantNo, String providerNo,
                         String productNo, String taskCode,

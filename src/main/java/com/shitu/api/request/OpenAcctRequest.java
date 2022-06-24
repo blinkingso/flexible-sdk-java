@@ -74,8 +74,7 @@ public class OpenAcctRequest extends AbstractFlexibleRequest<OpenAcctResponse> {
         }
 
         try {
-            byte[] img = Base64.getDecoder().decode(getBizModel().getImgFace()
-                    .getBytes(StandardCharsets.UTF_8));
+            byte[] img =  getBizModel().getImgFace().getBytes(StandardCharsets.UTF_8);
             if (img.length > Constant.FILE_MAX_SIZE) {
                 throw new ClientSdkException(IMG_TOO_LARGE);
             }

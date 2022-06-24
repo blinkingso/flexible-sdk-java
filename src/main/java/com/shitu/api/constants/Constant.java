@@ -10,9 +10,13 @@ public enum Constant {
     ;
 
     /**
-     * 上传文件最大限制为2Mb
+     * 上传文件最大限制为2Mb(base64编码后)
      */
     public static final int FILE_MAX_SIZE = 2 * 1024 * 1024;
+    /**
+     * 活体认证视频最大5mb(base64编码后)
+     */
+    public static final int VIDEO_FILE_MAX_SIZE = 5 * 1024 * 1024;
 
     public enum Api {
         ;
@@ -29,6 +33,11 @@ public enum Constant {
          * 开通银行账户
          */
         public static final String API_ACCT_OPEN = "/acct/open";
+
+        /**
+         * 活体认证开户接口
+         */
+        public static final String API_ACCT_OPEN_VIDEO = "/acct/open/video";
         /**
          * 查询账户信息
          */

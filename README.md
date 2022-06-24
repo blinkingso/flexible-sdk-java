@@ -1,6 +1,15 @@
 #####使用样例
 ```java
+import com.shitu.api.*;
+import com.shitu.api.request.*;
+import com.shitu.api.model.*;
+import com.shitu.api.constants.*;
+import com.shitu.api.response.*;
+import com.alibaba.fastjson.JSON;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 public static final class TestDemo {
+    private final Logger logger = LoggerFactory.getLogger(TestDemo.class);
     private static final String MERCHANT_NO = "A***-******-******";
     private static final String PROVIDER_NO = "S*****";
     private static final String PRODUCT_NO = "P*****";

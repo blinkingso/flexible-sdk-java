@@ -63,8 +63,8 @@ public final class RegisterRequest extends AbstractFlexibleRequest<RegisterRespo
             throw new ClientSdkException("身份证正反面照片不能为空");
         }
 
-        if (Base64.getDecoder().decode(getBizModel().getImgIdCardFront().getBytes(StandardCharsets.UTF_8)).length > Constant.FILE_MAX_SIZE
-                || Base64.getDecoder().decode(getBizModel().getImgIdCardBack().getBytes(StandardCharsets.UTF_8)).length >
+        if (getBizModel().getImgIdCardFront().getBytes(StandardCharsets.UTF_8).length > Constant.FILE_MAX_SIZE
+                || getBizModel().getImgIdCardBack().getBytes(StandardCharsets.UTF_8).length >
                 Constant.FILE_MAX_SIZE) {
             throw new ClientSdkException("图片大小不能超过2MB");
         }

@@ -59,6 +59,16 @@ public final class OpenAcctModel implements Serializable {
      */
     private String ipAdr;
 
+    /**
+     * 银行卡照片
+     */
+    private String imgBank;
+
+    /**
+     * 活体视频5mb
+     */
+    private String videoBase64;
+
     public String getProviderNo() {
         return providerNo;
     }
@@ -155,6 +165,22 @@ public final class OpenAcctModel implements Serializable {
         this.ipAdr = ipAdr;
     }
 
+    public String getImgBank() {
+        return imgBank;
+    }
+
+    public void setImgBank(String imgBank) {
+        this.imgBank = imgBank;
+    }
+
+    public String getVideoBase64() {
+        return videoBase64;
+    }
+
+    public void setVideoBase64(String videoBase64) {
+        this.videoBase64 = videoBase64;
+    }
+
     @Override
     public String toString() {
         return new StringJoiner(", ", OpenAcctModel.class.getSimpleName() + "[", "]")
@@ -169,7 +195,9 @@ public final class OpenAcctModel implements Serializable {
                 .add("validDateStart='" + validDateStart + "'")
                 .add("validDateEnd='" + validDateEnd + "'")
                 .add("address='" + address + "'")
+                .add("imgBank='" + imgBank + "'")
                 .add("ipAdr='" + ipAdr + "'")
+                .add("videoBase64='" + videoBase64 + "'")
                 .toString();
     }
 
@@ -186,6 +214,8 @@ public final class OpenAcctModel implements Serializable {
         private String validDateEnd;
         private String address;
         private String ipAdr;
+        private String imgBank;
+        private String videoBase64;
 
         private Builder() {
         }
@@ -254,6 +284,16 @@ public final class OpenAcctModel implements Serializable {
             return this;
         }
 
+        public Builder imgBank(String imgBank) {
+            this.imgBank = imgBank;
+            return this;
+        }
+
+        public Builder videoBase64(String videoBase64) {
+            this.videoBase64 = videoBase64;
+            return this;
+        }
+
         public OpenAcctModel build() {
             OpenAcctModel openAcctModel = new OpenAcctModel();
             openAcctModel.setProviderNo(providerNo);
@@ -268,6 +308,8 @@ public final class OpenAcctModel implements Serializable {
             openAcctModel.setValidDateEnd(validDateEnd);
             openAcctModel.setAddress(address);
             openAcctModel.setIpAdr(ipAdr);
+            openAcctModel.setImgBank(imgBank);
+            openAcctModel.setVideoBase64(videoBase64);
             return openAcctModel;
         }
     }
