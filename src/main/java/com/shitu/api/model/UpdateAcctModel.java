@@ -2,6 +2,8 @@ package com.shitu.api.model;
 
 import java.io.Serializable;
 
+import com.shitu.api.constants.PayPass;
+
 /**
  * @author andrew
  * @date 2021-10-27 10:32 AM
@@ -58,7 +60,7 @@ public final class UpdateAcctModel implements Serializable {
      */
     private String imgIdCardBack;
     /**
-     * 业务类型  1委托代征2.个体户注册(分包)3.自然人代开4.临时税务登记
+     * 业务类型 1委托代征2.个体户注册(分包)3.自然人代开4.临时税务登记
      */
     private String busType;
 
@@ -208,8 +210,14 @@ public final class UpdateAcctModel implements Serializable {
             return this;
         }
 
+        @Deprecated
         public Builder payPass(String payPass) {
             this.payPass = payPass;
+            return this;
+        }
+
+        public Builder payPass(PayPass payPass) {
+            this.payPass = payPass.getPayPass();
             return this;
         }
 

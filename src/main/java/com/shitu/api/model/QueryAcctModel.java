@@ -2,6 +2,8 @@ package com.shitu.api.model;
 
 import java.io.Serializable;
 
+import com.shitu.api.constants.PayPass;
+
 /**
  * 用户信息查询接口
  *
@@ -60,7 +62,6 @@ public final class QueryAcctModel implements Serializable {
         this.idCard = idCard;
     }
 
-
     public static final class Builder {
         private String memberId;
         private String type;
@@ -84,8 +85,14 @@ public final class QueryAcctModel implements Serializable {
             return this;
         }
 
+        @Deprecated
         public Builder payPass(String payPass) {
             this.payPass = payPass;
+            return this;
+        }
+
+        public Builder payPass(PayPass payPass) {
+            this.payPass = payPass.getPayPass();
             return this;
         }
 

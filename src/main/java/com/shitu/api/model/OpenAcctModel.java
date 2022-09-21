@@ -3,6 +3,8 @@ package com.shitu.api.model;
 import java.io.Serializable;
 import java.util.StringJoiner;
 
+import com.shitu.api.constants.PayPass;
+
 /**
  * @author andrew
  * @date 2021-10-25 10:50 AM
@@ -234,8 +236,14 @@ public final class OpenAcctModel implements Serializable {
             return this;
         }
 
+        @Deprecated
         public Builder payPass(String payPass) {
             this.payPass = payPass;
+            return this;
+        }
+
+        public Builder payPass(PayPass payPass) {
+            this.payPass = payPass.getPayPass();
             return this;
         }
 

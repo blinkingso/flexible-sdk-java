@@ -3,6 +3,8 @@ package com.shitu.api.model;
 import java.io.Serializable;
 import java.util.List;
 
+import com.shitu.api.constants.PayPass;
+
 /**
  * @author andrew
  * @date 2021-10-27 10:48 AM
@@ -173,8 +175,14 @@ public final class OrderPayModel implements Serializable {
             return this;
         }
 
+        @Deprecated
         public Builder payPass(String payPass) {
             this.payPass = payPass;
+            return this;
+        }
+
+        public Builder payPass(PayPass payPass) {
+            this.payPass = payPass.getPayPass();
             return this;
         }
 
