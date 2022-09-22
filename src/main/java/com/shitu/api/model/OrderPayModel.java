@@ -33,10 +33,6 @@ public final class OrderPayModel implements Serializable {
      */
     private String costUndertaker;
     /**
-     * 业务类型
-     */
-    private String busType;
-    /**
      * 批次流水号
      */
     private String batchNumber;
@@ -88,14 +84,6 @@ public final class OrderPayModel implements Serializable {
 
     public void setCostUndertaker(String costUndertaker) {
         this.costUndertaker = costUndertaker;
-    }
-
-    public String getBusType() {
-        return busType;
-    }
-
-    public void setBusType(String busType) {
-        this.busType = busType;
     }
 
     public String getBatchNumber() {
@@ -198,7 +186,6 @@ public final class OrderPayModel implements Serializable {
             orderPayModel.setTaskCode(taskCode);
             orderPayModel.setProductCode(productCode);
             orderPayModel.setCostUndertaker(costUndertaker);
-            orderPayModel.setBusType(busType);
             orderPayModel.setBatchNumber(batchNumber);
             orderPayModel.setPayPass(payPass);
             orderPayModel.setPayList(payList);

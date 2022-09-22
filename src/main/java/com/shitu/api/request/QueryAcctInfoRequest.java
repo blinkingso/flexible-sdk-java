@@ -14,13 +14,24 @@ import java.util.Map;
 public class QueryAcctInfoRequest extends AbstractFlexibleRequest<QueryAcctInfoResponse> {
 
     private final String payPass;
+    private final String providerNo;
+
+    public QueryAcctInfoRequest(String payPass, String providerNo) {
+        this.payPass = payPass;
+        this.providerNo = providerNo;
+    }
 
     public QueryAcctInfoRequest(String payPass) {
         this.payPass = payPass;
+        this.providerNo = null;
     }
 
     public String getPayPass() {
         return payPass;
+    }
+
+    public String getProviderNo() {
+        return providerNo;
     }
 
     /**
@@ -36,6 +47,7 @@ public class QueryAcctInfoRequest extends AbstractFlexibleRequest<QueryAcctInfoR
     private Map<String, String> getParamMap() {
         Map<String, String> params = new HashMap<>(1);
         params.put("payPass", getPayPass());
+        params.put("providerNo", getProviderNo());
         return params;
     }
 
