@@ -4,24 +4,26 @@ import com.shitu.api.utils.StringUtil;
 
 /**
  * 对接方客户端配置
+ * 
  * @author andrew
  * @date 2021-10-27 2:38 PM
  */
 public class ClientConfig {
 
-//    public static final String DEFAULT_DOMAIN = "https://fec.51wanquan.com/api/fec";
-    public static final String DEFAULT_DOMAIN = "http://localhost:8093/api/fec";
+    public static final String DEFAULT_DOMAIN = "https://fec.51wanquan.com/api/fec";
+    // public static final String DEFAULT_DOMAIN = "http://localhost:8093/api/fec";
 
     public ClientConfig(String merchantNo, String providerNo,
-                        String productNo, String taskCode,
-                        String privateKey, String systemPublicKey) throws ClientSdkException {
-       this(DEFAULT_DOMAIN, merchantNo, providerNo, productNo, taskCode, privateKey, systemPublicKey);
+            String productNo, String taskCode,
+            String privateKey, String systemPublicKey) throws ClientSdkException {
+        this(DEFAULT_DOMAIN, merchantNo, providerNo, productNo, taskCode, privateKey, systemPublicKey);
     }
 
     public ClientConfig(String domain, String merchantNo, String providerNo,
-                        String productNo, String taskCode,
-                        String privateKey, String systemPublicKey) throws ClientSdkException {
-        StringUtil.requireNonNullOrEmpty(domain, merchantNo, providerNo, productNo, taskCode, privateKey, systemPublicKey);
+            String productNo, String taskCode,
+            String privateKey, String systemPublicKey) throws ClientSdkException {
+        StringUtil.requireNonNullOrEmpty(domain, merchantNo, providerNo, productNo, taskCode, privateKey,
+                systemPublicKey);
         this.domain = domain;
         this.merchantNo = merchantNo;
         this.providerNo = providerNo;
